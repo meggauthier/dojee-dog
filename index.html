@@ -8,11 +8,8 @@
 <div class="container clearfix">
     <div class="timer">
         <div class="timerContent">
-            <?php
-                                $timer_time = isset($_GET['timer_future_time']) ? strtotime($_GET['timer_future_time']) : strtotime("-5 hour");
-                                $timer_future_time = 1575338400;
-                                if($timer_time < $timer_future_time): ?>
-            <h1>25% OFF EVERYTHING ~ NO CODE NEEDED!*</h1>
+
+            <h1>Countdown to our vacation!!!</h1>
             <ul>
                 <li>
                     <span class="timerDigit" id="days"></span>
@@ -32,30 +29,6 @@
                 </li>
             </ul>
             <p><br></p>
-            <p> Expires 11/25/2019&nbsp; *Exclusions Apply</p>
-            <?php else: ?>
-            <h1>25% OFF SITE-WIDE ~ NO CODE NEEDED!*</h1>
-            <ul>
-                <li>
-                    <span class="timerDigit" id="days"></span>
-                    <span class="timerText">Days &nbsp;</span>
-                </li>
-                <li>
-                    <span class="timerDigit" id="hours"></span>
-                    <span class="timerText">Hours &nbsp;</span>
-                </li>
-                <li>
-                    <span class="timerDigit" id="minutes"></span>
-                    <span class="timerText">Minutes &nbsp;</span>
-                </li>
-                <li>
-                    <span class="timerDigit" id="seconds"></span><br>
-                    <span class="timerText">Seconds &nbsp;</span>
-                </li>
-            </ul>
-            <p><br></p>
-            <p> Expires 12/2/2019&nbsp; *Exclusions Apply</p>
-            <?php endif; ?>
         </div>
     </div>
     <div style="background-color:#F4F4F4;" class="xmasCopy">
