@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brian & Meg <3</title>
+</head>
+<body>
+<div class="container clearfix">
+    <div class="timer">
+        <div class="timerContent">
+            <?php
+                                $timer_time = isset($_GET['timer_future_time']) ? strtotime($_GET['timer_future_time']) : strtotime("-5 hour");
+                                $timer_future_time = 1575338400;
+                                if($timer_time < $timer_future_time): ?>
+            <h1>25% OFF EVERYTHING ~ NO CODE NEEDED!*</h1>
+            <ul>
+                <li>
+                    <span class="timerDigit" id="days"></span>
+                    <span class="timerText">Days &nbsp;</span>
+                </li>
+                <li>
+                    <span class="timerDigit" id="hours"></span>
+                    <span class="timerText">Hours &nbsp;</span>
+                </li>
+                <li>
+                    <span class="timerDigit" id="minutes"></span>
+                    <span class="timerText">Minutes &nbsp;</span>
+                </li>
+                <li>
+                    <span class="timerDigit" id="seconds"></span><br>
+                    <span class="timerText">Seconds &nbsp;</span>
+                </li>
+            </ul>
+            <p><br></p>
+            <p> Expires 11/25/2019&nbsp; *Exclusions Apply</p>
+            <?php else: ?>
+            <h1>25% OFF SITE-WIDE ~ NO CODE NEEDED!*</h1>
+            <ul>
+                <li>
+                    <span class="timerDigit" id="days"></span>
+                    <span class="timerText">Days &nbsp;</span>
+                </li>
+                <li>
+                    <span class="timerDigit" id="hours"></span>
+                    <span class="timerText">Hours &nbsp;</span>
+                </li>
+                <li>
+                    <span class="timerDigit" id="minutes"></span>
+                    <span class="timerText">Minutes &nbsp;</span>
+                </li>
+                <li>
+                    <span class="timerDigit" id="seconds"></span><br>
+                    <span class="timerText">Seconds &nbsp;</span>
+                </li>
+            </ul>
+            <p><br></p>
+            <p> Expires 12/2/2019&nbsp; *Exclusions Apply</p>
+            <?php endif; ?>
+        </div>
+    </div>
+    <div style="background-color:#F4F4F4;" class="xmasCopy">
+        <p style="font-size: 14px;font-weight: bold;color:#2da2ba;text-align:center;padding: 10px 0px;">Order by December 17 for Guaranteed Christmas Delivery**</p>
+    </div>
+</div>
+<style>
+
+    .timer {
+        position: relative;
+        min-height: 265px;
+        color: #fff;
+        background: #92d6e3;
+        background-image: url('https://cdn-store.iseeme.com/skin/frontend/polar/default/images/homepage/2019-holiday-homepage/sale-banner-mobile.jpg');
+        background-position: center;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .timerContent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .timer * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .timer h1 {
+        color: white;
+    }
+
+    .timer ul {
+        display: inline-flex;
+        list-style: none;
+
+    }
+    .timer li {
+        list-style-type: none;
+        text-transform: uppercase;
+    }
+    .timerDigit {
+        font-size: 3rem;
+        margin: 5px;
+    }
+    .timerText {
+        font-size: 10px;
+        margin-top: -15px;
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        .timer {
+            background-image: url('https://cdn-store.iseeme.com/skin/frontend/polar/default/images/homepage/2019-holiday-homepage/sale-banner.jpg');
+            min-height: 195px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .secondary-info li  {
+            float: none;
+        }
+        .tertiary-info li  {
+            float: none;
+        }
+
+
+    }
+
+
+</style>
+
+<!-- Begin JavaScript countdown script -->
+<script>
+    const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    countDown = new Date('Nov 26, 2019 02:00:00').getTime(),
+        mg_time = setInterval(function() {
+
+            let now = new Date().getTime(),
+                distance = countDown - now;
+
+            console.log("New Timer!");
+
+            document.getElementById('days').innerText = Math.floor(distance / (day)),
+                document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+                document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+                document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+            //do something later when date is reached
+
+        }, second);
+
+</script>
+
+
+</body>
+</html>
